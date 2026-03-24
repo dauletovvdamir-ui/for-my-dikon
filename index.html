@@ -1,90 +1,144 @@
 <!DOCTYPE html>
 <html lang="kk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Приглашение</title>
-    <style>
-        body {
-            background-color: #ffdae0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-        }
-        .container { text-align: center; }
-        img { width: 150px; border-radius: 10px; margiz-bottom: 20px; }
-        h1 { color: #d32f2f; font-size: 24px; }
-        .buttons { display: flex; gap: 20px; align-items: center; justify-content: center; margin-top: 20px; }
-        #yesBtn {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 18px;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        #noBtn {
-            background-color: #f44336;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 18px;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-        .success { display: none; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Приглашение</title>
+
+<style>
+body {
+    background: linear-gradient(135deg, #ffd1dc, #ffb6c1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* карточка */
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    max-width: 400px;
+    width: 90%;
+    animation: fadeIn 0.8s ease;
+}
+
+/* гиф */
+img {
+    width: 180px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+/* большая гиф после нажатия */
+#successScreen img {
+    width: 320px;
+}
+
+/* текст */
+h1 {
+    color: #d32f2f;
+    font-size: 22px;
+    line-height: 1.5;
+}
+
+/* кнопки */
+.buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button {
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#yesBtn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#yesBtn:hover {
+    transform: scale(1.1);
+}
+
+#noBtn {
+    background-color: #f44336;
+    color: white;
+}
+
+.success {
+    display: none;
+}
+
+/* анимация появления */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+</style>
 </head>
+
 <body>
 
-    <div class="container" id="mainCard">
-        <img src="https://i.imgur.com/bZZDB4c.gif" alt="Bear">
-        <h1>Қозы Көрпеш Баян Сұлу күнін бірге өткіземіз бе?</h1>
-        <div class="buttons">
-            <button id="yesBtn">Иә 😍</button>
-            <button id="noBtn">Жоооқ</button>
-        </div>
+<div class="container" id="mainCard">
+    <img src="https://i.imgur.com/bZZDB4c.gif">
+    <h1>Қозы Көрпеш Баян Сұлу күнін бірге өткіземіз бе?</h1>
+
+    <div class="buttons">
+        <button id="yesBtn">Иә 😍</button>
+        <button id="noBtn">Жоооқ</button>
     </div>
+</div>
 
-    <div class="container success" id="successScreen">
-        <img src="https://i.pinimg.com/originals/05/b4/36/05b4369c0d8d79bca1452a74fb6a5cbe.gif" alt="Love">
-        <style>="width: 400px; height: auto;">
-            </style>
-<br>Құрметті Динара🫶🏻 <br> Сізді Қозы Көрпеш Баян Сұлу мерекесін бірге өткізуге шақырамын <br> Дата: 15.04.2026 <br> Өтетін орны: что-то там <br> Дресс код: қандай киім кисең де сұлусың ғой❤️ <br> Өзіңмен керемет көңіл-күй ала қойыңыз🫂 <br> Құрметпен, Дамир🫦</h1>
-    </div>
+<div class="container success" id="successScreen">
+    <img src="https://i.pinimg.com/originals/05/b4/36/05b4369c0d8d79bca1452a74fb6a5cbe.gif">
 
-    <script>
-        const yesBtn = document.getElementById('yesBtn');
-        const noBtn = document.getElementById('noBtn');
-        const mainCard = document.getElementById('mainCard');
-        const successScreen = document.getElementById('successScreen');
+    <h1>
+        Құрметті Динара🫶🏻 <br>
+        Сізді Қозы Көрпеш Баян Сұлу мерекесін бірге өткізуге шақырамын <br><br>
+        📅 Дата: 15.04.2026 <br>
+        📍 Өтетін орны: что-то там <br><br>
+        👗 Дресс код: қандай киім кисең де сұлусың ғой❤️ <br>
+        🎉 Өзіңмен керемет көңіл-күй ала қойыңыз🫂 <br><br>
+        Құрметпен, Дамир🫦
+    </h1>
+</div>
 
-        let yesFontSize = 18;
-        const phrases = ["?", "Клубника в шоколаде?", "Киноға апарамын", "Сенімдісің бе?", "Өтінемін...", "Ойланшы!", "Оте өтінемін!", "Мәәә...", "Жоқ демеші"];
-        let phraseIndex = 0;
+<script>
+const yesBtn = document.getElementById('yesBtn');
+const noBtn = document.getElementById('noBtn');
+const mainCard = document.getElementById('mainCard');
+const successScreen = document.getElementById('successScreen');
 
-        noBtn.addEventListener('click', () => {
-            // Увеличиваем кнопку "ДА"
-            yesFontSize += 20;
-            yesBtn.style.fontSize = yesFontSize + 'px';
-            yesBtn.style.padding = (yesFontSize/1.2) + 'px ' + (yesFontSize*1.5) + 'px';
+let yesFontSize = 16;
+const phrases = ["?", "Клубника в шоколаде?", "Киноға апарамын", "Сенімдісің бе?", "Өтінемін...", "Ойланшы!", "Оте өтінемін!", "Мәәә...", "Жоқ демеші"];
+let phraseIndex = 0;
 
-            // Меняем текст на кнопке "НЕТ"
-            noBtn.innerText = phrases[phraseIndex];
-            phraseIndex = (phraseIndex + 1) % phrases.length;
-        });
+noBtn.addEventListener('click', () => {
+    yesFontSize += 10;
+    yesBtn.style.fontSize = yesFontSize + 'px';
 
-        yesBtn.addEventListener('click', () => {
-            mainCard.style.display = 'none';
-            successScreen.style.display = 'block';
-        });
-    </script>
+    noBtn.innerText = phrases[phraseIndex];
+    phraseIndex = (phraseIndex + 1) % phrases.length;
+});
+
+yesBtn.addEventListener('click', () => {
+    mainCard.style.display = 'none';
+    successScreen.style.display = 'block';
+});
+</script>
+
 </body>
 </html>
