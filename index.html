@@ -7,44 +7,46 @@
 
 <style>
 body {
-    background: linear-gradient(135deg, #ffd1dc, #ffb6c1);
+    background: linear-gradient(135deg, #ff9eb5, #ffc3d1);
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 /* карточка */
 .container {
-    background: white;
-    padding: 30px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    padding: 35px;
     border-radius: 25px;
     text-align: center;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-    max-width: 400px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    max-width: 420px;
     width: 90%;
     animation: fadeIn 0.8s ease;
 }
 
 /* гиф */
 img {
-    width: 180px;
-    border-radius: 15px;
+    width: 240px;
+    border-radius: 20px;
     margin-bottom: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-/* большая гиф после нажатия */
+/* большая гиф */
 #successScreen img {
-    width: 320px;
+    width: 340px;
 }
 
 /* текст */
 h1 {
-    color: #d32f2f;
+    color: #c62828;
     font-size: 22px;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 /* кнопки */
@@ -52,40 +54,47 @@ h1 {
     display: flex;
     gap: 15px;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 button {
     border: none;
     padding: 12px 25px;
     font-size: 16px;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
     transition: 0.3s;
+    font-weight: bold;
 }
 
 #yesBtn {
-    background-color: #4CAF50;
+    background: linear-gradient(135deg, #4CAF50, #66bb6a);
     color: white;
+    box-shadow: 0 5px 15px rgba(76,175,80,0.4);
 }
 
 #yesBtn:hover {
-    transform: scale(1.1);
+    transform: scale(1.15);
 }
 
 #noBtn {
-    background-color: #f44336;
+    background: linear-gradient(135deg, #f44336, #ff6b6b);
     color: white;
+    box-shadow: 0 5px 15px rgba(244,67,54,0.4);
+}
+
+#noBtn:hover {
+    transform: scale(0.95);
 }
 
 .success {
     display: none;
 }
 
-/* анимация появления */
+/* анимация */
 @keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.8); }
-    to { opacity: 1; transform: scale(1); }
+    from { opacity: 0; transform: translateY(30px) scale(0.9); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
 }
 </style>
 </head>
