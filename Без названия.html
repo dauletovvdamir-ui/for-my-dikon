@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приглашение</title>
+    <style>
+        body {
+            background-color: #ffdae0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        .container { text-align: center; }
+        img { width: 150px; border-radius: 10px; margin-bottom: 20px; }
+        h1 { color: #d32f2f; font-size: 24px; }
+        .buttons { display: flex; gap: 20px; align-items: center; justify-content: center; margin-top: 20px; }
+        #yesBtn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #noBtn {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .success { display: none; }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="mainCard">
+        <img src="https://media.tenor.com/gU8vXmb_hGAAAAAi/tkthao219-bubududu.gif" alt="Bear">
+        <h1>Ғашықтар күнін бірге өткіземіз бе?</h1>
+        <div class="buttons">
+            <button id="yesBtn">Иә 😍</button>
+            <button id="noBtn">Жоооқ</button>
+        </div>
+    </div>
+
+    <div class="container success" id="successScreen">
+        <img src="https://media.tenor.com/X9S_as_vC64AAAAi/bubu-dudu-kiss.gif" alt="Love">
+        <h1><br> Уууууууу!!!
+<br>Құрметті Динара🫶🏻 <br> Сізді Қозы Көрпеш Баян Сұлу мерекесін бірге өткізуге шақырамын <br> Дата: 15.04.2026 <br> Өтетін орны: что-то там <br> Дресс код: қандай киім кисең де сұлусың ғой❤️ <br> Өзіңмен керемет көңіл-күй ала қойыңыз🫂 <br> Құрметпен, Дамир🫦</h1>
+    </div>
+
+    <script>
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        const mainCard = document.getElementById('mainCard');
+        const successScreen = document.getElementById('successScreen');
+
+        let yesFontSize = 18;
+        const phrases = ["Точно ма?", "Клубника в шоколаде?", "Киноға апарамын", "Сенімдісің бе?", "Өтінемін...", "Ойланшы!", "Оте өтінемін!", "Мәәә...", "Жоқ демеші"];
+        let phraseIndex = 0;
+
+        noBtn.addEventListener('click', () => {
+            // Увеличиваем кнопку "ДА"
+            yesFontSize += 20;
+            yesBtn.style.fontSize = yesFontSize + 'px';
+            yesBtn.style.padding = (yesFontSize/1.2) + 'px ' + (yesFontSize*1.5) + 'px';
+
+            // Меняем текст на кнопке "НЕТ"
+            noBtn.innerText = phrases[phraseIndex];
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+        });
+
+        yesBtn.addEventListener('click', () => {
+            mainCard.style.display = 'none';
+            successScreen.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
